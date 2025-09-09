@@ -156,7 +156,32 @@ const API_CONFIG = {
     TIMEOUT: 5000 // ms
 };
 
+const SHOOTER_CONFIG = {
+    SHOOTER_Y_OFFSET: 50,
+    NEXT_GRAPE_OFFSET_X: 60,
+    NEXT_GRAPE_OFFSET_Y: 40,
+    RELOAD_DELAY: 500, // ms
+    SHOW_TRAJECTORY: true,
+    SHOW_POWER: true
+};
+
 // Export all constants
+window.GAME_STATES = GAME_STATES;
+window.GRAPE_TYPES = GRAPE_TYPES;
+window.GRAPE_COLORS = GRAPE_COLORS;
+window.GRID_CONFIG = GRID_CONFIG;
+window.GAME_CONFIG = GAME_CONFIG;
+window.PHYSICS = PHYSICS;
+window.COLORS = COLORS;
+window.UI_CONFIG = UI_CONFIG;
+window.AUDIO_CONFIG = AUDIO_CONFIG;
+window.LEVEL_CONFIG = LEVEL_CONFIG;
+window.INPUT_CONFIG = INPUT_CONFIG;
+window.ANIMATION_CONFIG = ANIMATION_CONFIG;
+window.DEBUG_CONFIG = DEBUG_CONFIG;
+window.API_CONFIG = API_CONFIG;
+window.SHOOTER_CONFIG = SHOOTER_CONFIG;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         GAME_STATES,
@@ -172,6 +197,7 @@ if (typeof module !== 'undefined' && module.exports) {
         INPUT_CONFIG,
         ANIMATION_CONFIG,
         DEBUG_CONFIG,
-        API_CONFIG
+        API_CONFIG,
+        SHOOTER_CONFIG
     };
 }

@@ -508,6 +508,8 @@ class Shooter {
 }
 
 // Export for use in other modules
+window.Shooter = Shooter;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Shooter;
 }

@@ -696,6 +696,8 @@ class UIManager {
 }
 
 // Export for use in other modules
+window.UIManager = UIManager;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = UIManager;
 }

@@ -559,6 +559,8 @@ Buona fortuna, vignaiolo!`;
 }
 
 // Export for use in other modules
+window.MenuScene = MenuScene;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = MenuScene;
 }

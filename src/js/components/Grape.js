@@ -344,6 +344,8 @@ class Grape extends Phaser.GameObjects.Sprite {
 }
 
 // Export for use in other modules
+window.Grape = Grape;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = Grape;
 }

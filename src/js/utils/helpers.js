@@ -509,6 +509,16 @@ const AudioUtils = {
 };
 
 // Export all utilities
+window.MathUtils = MathUtils;
+window.GridUtils = GridUtils;
+window.ColorUtils = ColorUtils;
+window.ArrayUtils = ArrayUtils;
+window.InputUtils = InputUtils;
+window.UIUtils = UIUtils;
+window.StorageUtils = StorageUtils;
+window.DebugUtils = DebugUtils;
+window.AudioUtils = AudioUtils;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         MathUtils,

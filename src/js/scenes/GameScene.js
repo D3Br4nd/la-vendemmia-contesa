@@ -587,6 +587,8 @@ class GameScene extends Phaser.Scene {
 }
 
 // Export for use in other modules
+window.GameScene = GameScene;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = GameScene;
 }

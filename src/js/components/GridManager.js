@@ -463,6 +463,8 @@ class GridManager {
 }
 
 // Export for use in other modules
+window.GridManager = GridManager;
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = GridManager;
 }

@@ -515,16 +515,15 @@ if (document.readyState === 'loading') {
 }
 
 // Export for use in other modules or global access
+window.VendemmiaGame = {
+    game: () => game,
+    initializeGame,
+    destroyGame,
+    gameConfig
+};
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        game: () => game,
-        initializeGame,
-        destroyGame,
-        gameConfig
-    };
-} else {
-    // Make available globally
-    window.VendemmiaGame = {
         game: () => game,
         initializeGame,
         destroyGame,
