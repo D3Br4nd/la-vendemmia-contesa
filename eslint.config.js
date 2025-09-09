@@ -23,16 +23,20 @@ module.exports = [
         GRID: "readonly",
         GRAPE_TYPES: "readonly",
         SHOOTER_CONFIG: "readonly",
-        UI_SETTINGS: "readonly",
+        UI_CONFIG: "readonly",
         AUDIO_CONFIG: "readonly",
         LEVELS_CONFIG: "readonly",
         DEBUG_CONFIG: "readonly",
+        // Helpers
         MathUtils: "readonly",
         GridUtils: "readonly",
         UIUtils: "readonly",
         AudioUtils: "readonly",
         StorageUtils: "readonly",
         DebugUtils: "readonly",
+        ColorUtils: "readonly",
+        ArrayUtils: "readonly",
+        InputUtils: "readonly",
         // Game main object
         VendemmiaGame: "readonly",
         // Browser
@@ -47,12 +51,14 @@ module.exports = [
         requestAnimationFrame: "readonly",
         gtag: "readonly",
         performance: "readonly",
-        location: "readonly"
+        location: "readonly",
+        fetch: "readonly"
       },
     },
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "error",
+      "no-redeclare": "error"
     },
   },
 ];
