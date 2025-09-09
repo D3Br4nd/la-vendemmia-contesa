@@ -7,7 +7,7 @@
 /**
  * Utility functions for mathematical operations
  */
-const MathUtils = {
+window.MathUtils = {
     /**
      * Calculate distance between two points
      */
@@ -68,7 +68,7 @@ const MathUtils = {
 /**
  * Grid utility functions
  */
-const GridUtils = {
+window.GridUtils = {
     /**
      * Convert screen coordinates to grid position
      */
@@ -155,7 +155,7 @@ const GridUtils = {
 /**
  * Color utility functions
  */
-const ColorUtils = {
+window.ColorUtils = {
     /**
      * Get color for grape type and color
      */
@@ -201,7 +201,7 @@ const ColorUtils = {
 /**
  * Array utility functions
  */
-const ArrayUtils = {
+window.ArrayUtils = {
     /**
      * Remove element from array
      */
@@ -243,7 +243,7 @@ const ArrayUtils = {
 /**
  * Touch/Input utility functions
  */
-const InputUtils = {
+window.InputUtils = {
     /**
      * Get touch position relative to game canvas
      */
@@ -285,7 +285,7 @@ const InputUtils = {
 /**
  * UI utility functions
  */
-const UIUtils = {
+window.UIUtils = {
     /**
      * Create styled text object
      */
@@ -353,7 +353,7 @@ const UIUtils = {
 /**
  * Local storage utility functions
  */
-const StorageUtils = {
+window.StorageUtils = {
     /**
      * Save data to local storage
      */
@@ -411,7 +411,7 @@ const StorageUtils = {
 /**
  * Debug utility functions
  */
-const DebugUtils = {
+window.DebugUtils = {
     /**
      * Log with level checking
      */
@@ -464,7 +464,7 @@ const DebugUtils = {
 /**
  * Audio utility functions
  */
-const AudioUtils = {
+window.AudioUtils = {
     /**
      * Play sound with volume control
      */
@@ -508,27 +508,16 @@ const AudioUtils = {
     }
 };
 
-// Export all utilities
-window.MathUtils = MathUtils;
-window.GridUtils = GridUtils;
-window.ColorUtils = ColorUtils;
-window.ArrayUtils = ArrayUtils;
-window.InputUtils = InputUtils;
-window.UIUtils = UIUtils;
-window.StorageUtils = StorageUtils;
-window.DebugUtils = DebugUtils;
-window.AudioUtils = AudioUtils;
-
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
-        MathUtils,
-        GridUtils,
-        ColorUtils,
-        ArrayUtils,
-        InputUtils,
-        UIUtils,
-        StorageUtils,
-        DebugUtils,
-        AudioUtils
+        MathUtils: window.MathUtils,
+        GridUtils: window.GridUtils,
+        ColorUtils: window.ColorUtils,
+        ArrayUtils: window.ArrayUtils,
+        InputUtils: window.InputUtils,
+        UIUtils: window.UIUtils,
+        StorageUtils: window.StorageUtils,
+        DebugUtils: window.DebugUtils,
+        AudioUtils: window.AudioUtils
     };
 }

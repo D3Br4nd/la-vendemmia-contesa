@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class MenuScene extends Phaser.Scene {
+window.MenuScene = class MenuScene extends Phaser.Scene {
     /**
      * Constructor for MenuScene
      */
@@ -558,9 +558,6 @@ Buona fortuna, vignaiolo!`;
     }
 }
 
-// Export for use in other modules
-window.MenuScene = MenuScene;
-
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = MenuScene;
+    module.exports = window.MenuScene;
 }

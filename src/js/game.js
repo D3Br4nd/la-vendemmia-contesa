@@ -90,7 +90,7 @@ const gameConfig = {
  * Pre-boot callback - called before game starts
  * @param {Phaser.Game} game - The game instance
  */
-function preBootCallback(game) {
+function preBootCallback() {
     DebugUtils.log('INFO', 'La Vendemmia Contesa - Pre-boot initialization');
     
     // Setup global error handling
@@ -260,7 +260,7 @@ function initializeSaveSystem() {
         localStorage.removeItem(testKey);
         
         DebugUtils.log('INFO', 'Local storage available');
-    } catch (error) {
+    } catch {
         DebugUtils.log('WARN', 'Local storage not available, using fallback');
         setupFallbackStorage();
     }
@@ -274,14 +274,11 @@ function setupFallbackStorage() {
     window.fallbackStorage = {};
     
     // Override StorageUtils methods to use fallback
-    const originalSave = StorageUtils.save;
-    const originalLoad = StorageUtils.load;
-    
     StorageUtils.save = function(key, data) {
         try {
             window.fallbackStorage[`vendemmia_${key}`] = JSON.stringify(data);
             return true;
-        } catch (error) {
+        } catch {
             return false;
         }
     };
@@ -290,7 +287,7 @@ function setupFallbackStorage() {
         try {
             const data = window.fallbackStorage[`vendemmia_${key}`];
             return data ? JSON.parse(data) : defaultValue;
-        } catch (error) {
+        } catch {
             return defaultValue;
         }
     };
@@ -300,7 +297,7 @@ function setupFallbackStorage() {
  * Setup performance monitoring
  * @param {Phaser.Game} game - The game instance
  */
-function setupPerformanceMonitoring(game) {
+function setupPerformanceMonitoring() {
     if (!DEBUG_CONFIG.ENABLED) return;
     
     // Monitor frame rate
@@ -490,7 +487,7 @@ function checkWebGLSupport() {
         const canvas = document.createElement('canvas');
         const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
         return !!gl;
-    } catch (e) {
+    } catch {
         return false;
     }
 }

@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class GridManager {
+window.GridManager = class GridManager {
     /**
      * Constructor for GridManager
      * @param {Phaser.Scene} scene - The game scene
@@ -117,8 +117,6 @@ class GridManager {
      * @returns {Object|null} Best grid position {col, row} or null if no valid position
      */
     snapToGrid(grape) {
-        const gridPos = GridUtils.screenToGrid(grape.x, grape.y);
-        
         // Find nearest available position
         const nearestPos = this.findNearestAvailablePosition(grape.x, grape.y);
         
@@ -462,9 +460,6 @@ class GridManager {
     }
 }
 
-// Export for use in other modules
-window.GridManager = GridManager;
-
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = GridManager;
+    module.exports = window.GridManager;
 }

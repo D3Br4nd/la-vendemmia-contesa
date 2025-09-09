@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class UIManager {
+window.UIManager = class UIManager {
     /**
      * Constructor for UIManager
      * @param {Phaser.Scene} scene - The game scene
@@ -679,7 +679,7 @@ class UIManager {
      * Update UI state
      * @param {number} delta - Time delta
      */
-    update(delta) {
+    update() {
         // Update any animated UI elements
     }
 
@@ -695,9 +695,6 @@ class UIManager {
     }
 }
 
-// Export for use in other modules
-window.UIManager = UIManager;
-
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = UIManager;
+    module.exports = window.UIManager;
 }

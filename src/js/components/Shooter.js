@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class Shooter {
+window.Shooter = class Shooter {
     /**
      * Constructor for Shooter
      * @param {Phaser.Scene} scene - The game scene
@@ -475,7 +475,7 @@ class Shooter {
      * Update shooter state
      * @param {number} delta - Time delta
      */
-    update(delta) {
+    update() {
         // Update any continuous animations or effects
         if (this.isAiming) {
             this.updateTrajectoryLine();
@@ -507,9 +507,6 @@ class Shooter {
     }
 }
 
-// Export for use in other modules
-window.Shooter = Shooter;
-
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Shooter;
+    module.exports = window.Shooter;
 }

@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class Grape extends Phaser.GameObjects.Sprite {
+window.Grape = class Grape extends Phaser.GameObjects.Sprite {
     /**
      * Constructor for Grape
      * @param {Phaser.Scene} scene - The scene this grape belongs to
@@ -343,9 +343,6 @@ class Grape extends Phaser.GameObjects.Sprite {
     }
 }
 
-// Export for use in other modules
-window.Grape = Grape;
-
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Grape;
+    module.exports = window.Grape;
 }

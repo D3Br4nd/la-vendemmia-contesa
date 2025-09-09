@@ -4,7 +4,7 @@
  * Versione: 1.1 - Natale 2025 Rosso Macchiato
  */
 
-class GameOverScene extends Phaser.Scene {
+window.GameOverScene = class GameOverScene extends Phaser.Scene {
     /**
      * Constructor for GameOverScene
      */
@@ -630,5 +630,5 @@ class GameOverScene extends Phaser.Scene {
 window.GameOverScene = GameOverScene;
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = GameOverScene;
+    module.exports = window.GameOverScene;
 }

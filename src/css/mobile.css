@@ -301,11 +301,13 @@
     /* Prevent iOS Safari from adding default styling */
     input[type="text"] {
         -webkit-appearance: none;
+        appearance: none;
         border-radius: 8px;
     }
     
     .game-button {
         -webkit-appearance: none;
+        appearance: none;
         border-radius: 10px;
     }
     
@@ -410,15 +412,10 @@
     }
     
     /* Disable non-essential animations */
-    @keyframes glow,
-    @keyframes grapePulse,
-    @keyframes trajectoryDash,
-    @keyframes shimmer {
-        from, to { 
-            transform: none;
-            opacity: 1;
-        }
-    }
+    @keyframes glow { from, to { transform: none; opacity: 1; } }
+    @keyframes grapePulse { from, to { transform: none; opacity: 1; } }
+    @keyframes trajectoryDash { from, to { transform: none; opacity: 1; } }
+    @keyframes shimmer { from, to { transform: none; opacity: 1; } }
 }
 
 /* Battery-aware optimizations */
