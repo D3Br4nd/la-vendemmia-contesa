@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Game Application
+  vendemmia-game:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: vendemmia-contesa
+    restart: unless-stopped
+    
+    # Environment variables
+    environment:
+      - NGINX_HOST=rm.prolocoventicano.com
+      - NGINX_PORT=80
+      - TZ=Europe/Rome
+    
+    # Bind mounts to local directories
+    volumes:
+      # Live editing volume - entire codebase mounted for real-time changes
+      - ./volume:/usr/share/nginx/html
+      # PHP backend with write access for live editing
+      - ./volume/src/php:/var/www/html
+      # Local logs directory
+      - ./logs:/var/log/nginx
+      # Data directory for leaderboard with full access
+      - ./volume/data:/usr/share/nginx/html/data
+    
+    # Networks - only PLV network
+    networks:
+      - plv_network
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Labels for Nginx Proxy Manager
+    labels:
+      - "traefik.enable=false"
+      - "npm.domain=rm.prolocoventicano.com"
+
+# Networks - only external PLV network
+networks:
+  plv_network:
+    external: true
+    name: plv_network

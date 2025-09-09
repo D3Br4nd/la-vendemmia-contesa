@@ -1,0 +1,73 @@
+{
+  "level": 2,
+  "name": "Il Vento del Nord",
+  "difficulty": "easy",
+  "narrative": "Il vento del nord ha portato una malattia strana... Gli acini macchiati si stanno moltiplicando. Agisci in fretta prima che sia troppo tardi!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Completa il livello entro 25 lanci",
+    "bonus": "Elimina almeno 5 acini con un singolo lancio"
+  },
+  "grapes": [
+    {"col": 1, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 1, "color": "aglianico", "type": "macchiato"},
+    {"col": 2, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "macchiato"},
+    {"col": 5, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 1, "color": "aglianico", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 2, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 3, "color": "aglianico", "type": "macchiato"},
+    {"col": 3, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 3, "color": "fiano", "type": "normal"},
+    
+    {"col": 2, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 4, "color": "fiano", "type": "normal"}
+  ],
+  "powerUps": [],
+  "timeLimit": null,
+  "maxShots": 30,
+  "scoring": {
+    "grapeMatch": 100,
+    "macchiatoDrop": 500,
+    "levelComplete": 1200,
+    "shotBonus": 40,
+    "perfectBonus": 2000,
+    "comboBonus": 200
+  },
+  "hints": [
+    "Cerca di creare reazioni a catena per massimizzare i punti",
+    "Il vento può influenzare la traiettoria - mira con attenzione",
+    "Gli acini macchiati si riconoscono dal colore rosso scuro",
+    "Usa gli acini normali per raggiungere quelli macchiati"
+  ],
+  "environment": {
+    "weather": "windy",
+    "timeOfDay": "morning",
+    "season": "autumn",
+    "wind": "moderate"
+  },
+  "culturalElements": {
+    "region": "Irpinia",
+    "wineType": "Greco di Tufo DOCG",
+    "tradition": "Raccolta con tramontana",
+    "saying": "Vento del nord, vino d'oro"
+  }
+}

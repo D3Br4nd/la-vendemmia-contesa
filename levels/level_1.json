@@ -1,0 +1,60 @@
+{
+  "level": 1,
+  "name": "L'Inizio della Vendemmia",
+  "difficulty": "easy",
+  "narrative": "La vendemmia è iniziata, ma alcuni acini sono macchiati... Aiuta il vignaiolo a rimuovere gli acini rovinati prima che si diffondano!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Completa il livello con meno di 15 lanci",
+    "bonus": "Non far cadere nessun acino normale"
+  },
+  "grapes": [
+    {"col": 2, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 1, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 1, "color": "aglianico", "type": "macchiato"},
+    {"col": 3, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 1, "color": "aglianico", "type": "normal"},
+    
+    {"col": 2, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 2, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 3, "color": "greco", "type": "macchiato"},
+    {"col": 3, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 3, "color": "greco", "type": "normal"}
+  ],
+  "powerUps": [],
+  "timeLimit": null,
+  "maxShots": 20,
+  "scoring": {
+    "grapeMatch": 100,
+    "macchiatoDrop": 500,
+    "levelComplete": 1000,
+    "shotBonus": 50,
+    "perfectBonus": 1500
+  },
+  "hints": [
+    "Tocca lo schermo per mirare e rilascia per sparare",
+    "Raggruppa 3 o più acini dello stesso colore per eliminarli",
+    "Gli acini macchiati (rossi con macchie) devono essere tutti eliminati",
+    "Fai cadere gli acini macchiati per completare il livello"
+  ],
+  "environment": {
+    "weather": "sunny",
+    "timeOfDay": "morning",
+    "season": "autumn",
+    "wind": "light"
+  },
+  "culturalElements": {
+    "region": "Campania",
+    "wineType": "Taurasi DOCG",
+    "tradition": "Prima raccolta dell'alba",
+    "saying": "Chi ben inizia è a metà dell'opera"
+  }
+}

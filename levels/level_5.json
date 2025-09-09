@@ -1,0 +1,107 @@
+{
+  "level": 5,
+  "name": "La Luna Piena",
+  "difficulty": "medium",
+  "narrative": "La luna piena rivela la vera natura degli acini... Sotto la sua luce argentea, il Rosso Macchiato pulsa di energia maligna. Solo nella notte più chiara potrai sconfiggerlo!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Completa il livello entro 50 lanci",
+    "bonus": "Usa il potere lunare per eliminare 15+ acini"
+  },
+  "grapes": [
+    {"col": 0, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 0, "color": "fiano", "type": "macchiato"},
+    {"col": 3, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 0, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 1, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 2, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 2, "color": "fiano", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 4, "color": "aglianico", "type": "macchiato"},
+    {"col": 5, "row": 4, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 5, "color": "fiano", "type": "normal"},
+    
+    {"col": 2, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 6, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 6, "color": "fiano", "type": "normal"}
+  ],
+  "powerUps": [
+    {"type": "lunar_beam", "position": {"col": 3, "row": 8}, "uses": 2},
+    {"type": "silver_shot", "position": {"col": 0, "row": 7}, "uses": 3},
+    {"type": "moon_blessing", "position": {"col": 6, "row": 7}, "uses": 1}
+  ],
+  "timeLimit": null,
+  "maxShots": 55,
+  "scoring": {
+    "grapeMatch": 140,
+    "macchiatoDrop": 800,
+    "levelComplete": 2200,
+    "shotBonus": 25,
+    "perfectBonus": 3500,
+    "lunarBonus": 600,
+    "nightBonus": 300,
+    "mysticalCombo": 750
+  },
+  "hints": [
+    "La luna potenzia i colpi di precisione",
+    "Gli acini macchiati brillano di più sotto la luna piena",
+    "I power-up lunari hanno effetti speciali di notte",
+    "La luce argentea rivela pattern nascosti"
+  ],
+  "environment": {
+    "weather": "clear",
+    "timeOfDay": "night",
+    "season": "autumn",
+    "wind": "calm",
+    "moonPhase": "full",
+    "ambiance": "mystical",
+    "lighting": "moonlit",
+    "sounds": ["night_breeze", "distant_owl", "leaves_shimmer"]
+  },
+  "culturalElements": {
+    "region": "Benevento",
+    "wineType": "Falanghina del Sannio DOC",
+    "tradition": "Vendemmia notturna di luna piena",
+    "saying": "Luna piena, vigna serena",
+    "folklore": "La luna svela i segreti del vino",
+    "ritual": "Raccolta sotto le stelle"
+  },
+  "specialMechanics": {
+    "moonlightEffect": true,
+    "enhancedVisibility": true,
+    "lunarPowerUps": true,
+    "nightBonuses": true
+  }
+}

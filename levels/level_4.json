@@ -1,0 +1,95 @@
+{
+  "level": 4,
+  "name": "Il Sussurro delle Foglie",
+  "difficulty": "medium",
+  "narrative": "Le foglie sussurrano di antiche maledizioni... Il Rosso Macchiato si nasconde tra i grappoli più fitti. Ascolta il vento e segui il tuo istinto!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Completa con almeno 3 combo",
+    "bonus": "Elimina 20+ acini in un singolo turno"
+  },
+  "grapes": [
+    {"col": 1, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 0, "color": "fiano", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 1, "color": "fiano", "type": "macchiato"},
+    {"col": 3, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 1, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 2, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 3, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 3, "color": "aglianico", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 4, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 5, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 5, "color": "greco", "type": "normal"},
+    
+    {"col": 2, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 6, "color": "greco", "type": "normal"}
+  ],
+  "powerUps": [
+    {"type": "color_bomb", "position": {"col": 1, "row": 7}, "uses": 1},
+    {"type": "line_clear", "position": {"col": 5, "row": 7}, "uses": 1}
+  ],
+  "timeLimit": null,
+  "maxShots": 45,
+  "scoring": {
+    "grapeMatch": 120,
+    "macchiatoDrop": 700,
+    "levelComplete": 1800,
+    "shotBonus": 30,
+    "perfectBonus": 3000,
+    "comboBonus": 250,
+    "massiveCombo": 500,
+    "powerUpBonus": 400
+  },
+  "hints": [
+    "Le combo multiple danno punti bonus enormi",
+    "Osserva i pattern nascosti tra i grappoli",
+    "I power-up possono sbloccare situazioni complesse",
+    "Ascolta le foglie... ti suggeriscono la strada"
+  ],
+  "environment": {
+    "weather": "breezy",
+    "timeOfDay": "afternoon",
+    "season": "autumn",
+    "wind": "moderate",
+    "ambiance": "mystical",
+    "sounds": ["leaves_rustling", "wind_whispers"]
+  },
+  "culturalElements": {
+    "region": "Taurasi",
+    "wineType": "Aglianico del Taburno DOCG",
+    "tradition": "Ascolto del vento per la raccolta",
+    "saying": "Chi sa ascoltare, sa raccogliere",
+    "folklore": "Le foglie parlano ai saggi"
+  }
+}

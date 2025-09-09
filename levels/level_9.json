@@ -1,0 +1,150 @@
+{
+  "level": 9,
+  "name": "L'Ombra degli Uccelli",
+  "difficulty": "expert",
+  "narrative": "Gli uccelli evitano questi grappoli maledetti... Le loro ombre danzano inquiete sopra la vigna. Qualcosa di terribile si sta per risvegliare. Il Rosso Macchiato ha quasi vinto!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Evita le ombre degli uccelli",
+    "bonus": "Completa senza usare power-up"
+  },
+  "grapes": [
+    {"col": 0, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 0, "color": "aglianico", "type": "macchiato"},
+    {"col": 2, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 0, "color": "fiano", "type": "macchiato"},
+    {"col": 6, "row": 0, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 1, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 1, "color": "aglianico", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 2, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 3, "color": "fiano", "type": "macchiato"},
+    {"col": 4, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 3, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 4, "color": "fiano", "type": "normal"},
+    
+    {"col": 0, "row": 5, "color": "greco", "type": "macchiato"},
+    {"col": 1, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 5, "color": "greco", "type": "macchiato"},
+    
+    {"col": 2, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 6, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 7, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 7, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 7, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 7, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 7, "color": "greco", "type": "normal"},
+    
+    {"col": 2, "row": 8, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 8, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 8, "color": "greco", "type": "macchiato"}
+  ],
+  "powerUps": [
+    {"type": "bird_whistle", "position": {"col": 0, "row": 10}, "uses": 2},
+    {"type": "shadow_pierce", "position": {"col": 3, "row": 10}, "uses": 3},
+    {"type": "fear_dispel", "position": {"col": 6, "row": 10}, "uses": 1},
+    {"type": "flight_path", "position": {"col": 1, "row": 10}, "uses": 2},
+    {"type": "talon_strike", "position": {"col": 5, "row": 10}, "uses": 1}
+  ],
+  "timeLimit": 200,
+  "maxShots": 75,
+  "scoring": {
+    "grapeMatch": 220,
+    "macchiatoDrop": 1400,
+    "levelComplete": 4000,
+    "shotBonus": 8,
+    "perfectBonus": 7000,
+    "shadowBonus": 1800,
+    "fearlessBonus": 3000,
+    "birdBonus": 1200,
+    "expertBonus": 3500
+  },
+  "hints": [
+    "Gli uccelli creano ombre che possono bloccare i colpi",
+    "Aspetta che gli uccelli si spostino per avere campo libero",
+    "Il fischietto degli uccelli può guidare i loro movimenti",
+    "Le ombre si muovono in pattern prevedibili"
+  ],
+  "environment": {
+    "weather": "ominous",
+    "timeOfDay": "dusk",
+    "season": "late_autumn",
+    "wind": "unsettling",
+    "lighting": "dim_with_shadows",
+    "ambiance": "foreboding",
+    "wildlife": "disturbed_birds",
+    "sounds": ["worried_chirping", "wing_flutter", "ominous_cawing", "shadow_whispers"]
+  },
+  "culturalElements": {
+    "region": "Monti Lattari",
+    "wineType": "Penisola Sorrentina DOC",
+    "tradition": "Osservazione degli uccelli per la vendemmia",
+    "saying": "Quando gli uccelli tacciono, il male si avvicina",
+    "folklore": "I corvi annunciano la maledizione del vino",
+    "superstition": "Uccelli che fuggono, raccolto che piange",
+    "wisdom": "La natura avverte sempre i saggi"
+  },
+  "specialMechanics": {
+    "birdShadows": true,
+    "movingObstacles": true,
+    "shadowBlocking": true,
+    "birdFlightPatterns": [
+      {
+        "birdType": "crow",
+        "path": [{"x": 100, "y": 200}, {"x": 200, "y": 150}, {"x": 300, "y": 200}],
+        "speed": "slow",
+        "shadowSize": "large"
+      },
+      {
+        "birdType": "sparrow", 
+        "path": [{"x": 150, "y": 100}, {"x": 250, "y": 120}, {"x": 350, "y": 100}],
+        "speed": "fast",
+        "shadowSize": "small"
+      },
+      {
+        "birdType": "hawk",
+        "path": [{"x": 50, "y": 300}, {"x": 400, "y": 250}],
+        "speed": "medium",
+        "shadowSize": "medium"
+      }
+    ],
+    "shadowEvents": [
+      {"triggerAt": 20, "type": "mass_flight", "duration": 5000},
+      {"triggerAt": 45, "type": "circling_pattern", "duration": 8000},
+      {"triggerAt": 70, "type": "final_exodus", "duration": 10000}
+    ],
+    "difficultyEscalation": {
+      "earlyGame": "few_small_shadows",
+      "midGame": "multiple_moving_shadows",
+      "lateGame": "complex_shadow_patterns"
+    }
+  }
+}

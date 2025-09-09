@@ -1,0 +1,102 @@
+# Docker ignore file for La Vendemmia Contesa
+
+# Development files
+.git
+.gitignore
+.gitattributes
+.vscode
+.idea
+*.md
+COMPLETION_SUMMARY.md
+project_structure.md
+
+# Documentation (exclude from production)
+docs/
+README.md
+
+# Scripts (exclude from production)
+scripts/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Docker files (prevent recursion)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Backup files
+*.bak
+*.backup
+
+# Asset source files (keep compiled only)
+assets/create_*.py
+*.psd
+*.ai
+*.sketch
+
+# Test files
+tests/
+test/
+__tests__/
+*.test.js
+*.spec.js
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Dependency directories
+bower_components/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Build artifacts
+build/
+dist/
+.next/
+out/
+
+# Webpack bundle analyzer
+.bundle_analyze/
+
+# Local data (will be mounted as volume)
+data/classifica.csv
+data/progress.json

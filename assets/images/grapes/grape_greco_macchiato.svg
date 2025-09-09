@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Acino principale -->
+  <circle cx="32" cy="32" r="28" 
+          fill="rgb(50, 205, 50)" stroke="rgba(0,0,0,0.3)" stroke-width="1"/>
+  
+  <!-- Highlight per effetto 3D -->
+  <circle cx="24" cy="24" r="10" 
+          fill="rgba(255,255,255,0.5)"/>
+  
+  <!-- Macchia -->
+  <circle cx="32" cy="32" r="16" 
+          fill="rgb(0, 155, 0)" opacity="0.8"/>
+</svg>

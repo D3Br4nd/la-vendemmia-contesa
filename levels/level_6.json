@@ -1,0 +1,110 @@
+{
+  "level": 6,
+  "name": "Il Tremore della Terra",
+  "difficulty": "hard",
+  "narrative": "Il suolo trema sotto il peso del mistero... Il Rosso Macchiato ha infettato le radici stesse della vigna. La terra sussulta, i grappoli oscillano. Mantieni l'equilibrio!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Sopravvivi a 3 terremoti",
+    "bonus": "Completa senza far cadere acini durante i tremori"
+  },
+  "grapes": [
+    {"col": 0, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 0, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 1, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 2, "color": "fiano", "type": "macchiato"},
+    {"col": 5, "row": 2, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 4, "color": "greco", "type": "macchiato"},
+    {"col": 3, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 4, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 5, "color": "fiano", "type": "normal"},
+    
+    {"col": 2, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 6, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 6, "color": "fiano", "type": "macchiato"}
+  ],
+  "powerUps": [
+    {"type": "earthquake_shield", "position": {"col": 1, "row": 8}, "uses": 3},
+    {"type": "stabilizer", "position": {"col": 3, "row": 8}, "uses": 2},
+    {"type": "tremor_shot", "position": {"col": 5, "row": 8}, "uses": 1}
+  ],
+  "timeLimit": null,
+  "maxShots": 60,
+  "scoring": {
+    "grapeMatch": 160,
+    "macchiatoDrop": 900,
+    "levelComplete": 2500,
+    "shotBonus": 20,
+    "perfectBonus": 4000,
+    "stabilityBonus": 800,
+    "earthquakeBonus": 600,
+    "survivalBonus": 1000
+  },
+  "hints": [
+    "Durante i terremoti, aspetta che si calmino prima di sparare",
+    "Lo scudo antisismico protegge dalle cadute accidentali",
+    "I tremori possono aiutarti a far cadere acini difficili",
+    "Mantieni la calma: la terra si calmerà"
+  ],
+  "environment": {
+    "weather": "unstable",
+    "timeOfDay": "evening",
+    "season": "autumn",
+    "wind": "variable",
+    "seismicActivity": "high",
+    "ambiance": "tense",
+    "sounds": ["earth_rumbling", "vine_creaking", "distant_thunder"]
+  },
+  "culturalElements": {
+    "region": "Vesuvio",
+    "wineType": "Lacryma Christi del Vesuvio DOC",
+    "tradition": "Vendemmia sui terreni vulcanici",
+    "saying": "La terra che trema, il vino che premia",
+    "folklore": "Vesuvio addormentato, vigna benedetta",
+    "geology": "Suoli vulcanici fertili"
+  },
+  "specialMechanics": {
+    "earthquakeEvents": [
+      {"triggerAt": 15, "intensity": "light", "duration": 3000},
+      {"triggerAt": 35, "intensity": "moderate", "duration": 4000},
+      {"triggerAt": 50, "intensity": "strong", "duration": 5000}
+    ],
+    "shakingEffect": true,
+    "instabilityWarnings": true,
+    "seismicPowerUps": true
+  }
+}

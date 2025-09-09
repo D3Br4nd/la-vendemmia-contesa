@@ -1,0 +1,168 @@
+{
+  "level": 10,
+  "name": "L'Ultima Battaglia",
+  "difficulty": "legendary",
+  "narrative": "L'ultima battaglia contro il Rosso Macchiato è iniziata! Il cuore pulsante del male si è rivelato. Tutti i grappoli sono contaminati. Solo un vero Maestro Vignaiolo può salvare la vendemmia. Il destino del vino italiano è nelle tue mani!",
+  "objectives": {
+    "primary": "Sconfiggi il Cuore del Rosso Macchiato",
+    "secondary": "Salva almeno il 70% degli acini normali",
+    "bonus": "Completa la leggenda perfetta"
+  },
+  "grapes": [
+    {"col": 0, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 0, "color": "fiano", "type": "macchiato"},
+    {"col": 2, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 0, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 0, "color": "greco", "type": "macchiato"},
+    {"col": 6, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "greco", "type": "macchiato"},
+    {"col": 1, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 1, "color": "greco", "type": "macchiato"},
+    
+    {"col": 1, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 2, "color": "aglianico", "type": "macchiato"},
+    {"col": 3, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 2, "color": "fiano", "type": "macchiato"},
+    {"col": 5, "row": 2, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 3, "color": "greco", "type": "boss_core"},
+    {"col": 4, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 4, "color": "greco", "type": "macchiato"},
+    {"col": 3, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 4, "color": "fiano", "type": "macchiato"},
+    {"col": 5, "row": 4, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 5, "color": "aglianico", "type": "macchiato"},
+    {"col": 1, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 5, "color": "aglianico", "type": "macchiato"},
+    
+    {"col": 2, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 6, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 6, "color": "aglianico", "type": "normal"},
+    
+    {"col": 1, "row": 7, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 7, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 7, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 7, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 7, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 8, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 8, "color": "greco", "type": "macchiato"},
+    {"col": 2, "row": 8, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 8, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 8, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 8, "color": "aglianico", "type": "macchiato"},
+    {"col": 6, "row": 8, "color": "fiano", "type": "normal"},
+    
+    {"col": 2, "row": 9, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 9, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 9, "color": "fiano", "type": "normal"}
+  ],
+  "powerUps": [
+    {"type": "master_vintage", "position": {"col": 0, "row": 11}, "uses": 1},
+    {"type": "divine_intervention", "position": {"col": 1, "row": 11}, "uses": 1},
+    {"type": "ancestral_wisdom", "position": {"col": 2, "row": 11}, "uses": 2},
+    {"type": "perfect_aim", "position": {"col": 3, "row": 11}, "uses": 3},
+    {"type": "legendary_shot", "position": {"col": 4, "row": 11}, "uses": 2},
+    {"type": "salvation_beam", "position": {"col": 5, "row": 11}, "uses": 1},
+    {"type": "final_blessing", "position": {"col": 6, "row": 11}, "uses": 1}
+  ],
+  "timeLimit": 300,
+  "maxShots": 100,
+  "scoring": {
+    "grapeMatch": 250,
+    "macchiatoDrop": 1600,
+    "bossCoreDamage": 5000,
+    "levelComplete": 10000,
+    "shotBonus": 5,
+    "perfectBonus": 15000,
+    "legendaryBonus": 20000,
+    "salvationBonus": 25000,
+    "masterBonus": 30000,
+    "finalVictoryBonus": 50000
+  },
+  "hints": [
+    "Il Cuore del Rosso Macchiato deve essere colpito direttamente",
+    "Usa tutti i power-up leggendari a tua disposizione",
+    "La salvezza della vendemmia dipende da te",
+    "Ricorda tutto quello che hai imparato"
+  ],
+  "environment": {
+    "weather": "apocalyptic",
+    "timeOfDay": "eternal_twilight",
+    "season": "cursed_autumn",
+    "wind": "chaotic",
+    "lighting": "supernatural",
+    "ambiance": "epic_final_battle",
+    "effects": ["pulsing_corruption", "divine_light", "swirling_energy"],
+    "sounds": ["epic_orchestra", "heartbeat_bass", "divine_chorus", "wind_of_destiny"]
+  },
+  "culturalElements": {
+    "region": "Tutta l'Italia",
+    "wineType": "L'Essenza del Vino Italiano",
+    "tradition": "La leggenda del Maestro Vignaiolo",
+    "saying": "Per aspera ad astra - attraverso le difficoltà alle stelle",
+    "folklore": "La battaglia finale tra il bene e il male",
+    "epic": "Il destino del vino nelle tue mani",
+    "legacy": "Diventa leggenda nella storia del vino",
+    "triumph": "La vittoria della tradizione italiana"
+  },
+  "specialMechanics": {
+    "bossCore": {
+      "health": 10,
+      "phases": [
+        {
+          "phase": 1,
+          "healthRange": [8, 10],
+          "behavior": "defensive",
+          "effects": ["pulse_shield", "minor_corruption"]
+        },
+        {
+          "phase": 2, 
+          "healthRange": [5, 7],
+          "behavior": "aggressive",
+          "effects": ["rapid_spread", "major_corruption", "chaos_field"]
+        },
+        {
+          "phase": 3,
+          "healthRange": [1, 4],
+          "behavior": "desperate",
+          "effects": ["final_corruption", "reality_distortion", "last_stand"]
+        }
+      ]
+    },
+    "epicEvents": [
+      {"triggerAt": 30, "event": "first_corruption_wave", "message": "Il Rosso Macchiato scatena la sua ira!"},
+      {"triggerAt": 60, "event": "ancestral_spirits", "message": "Gli spiriti dei vignaioli ti guidano!"},
+      {"triggerAt": 90, "event": "final_phase", "message": "L'ultima battaglia è iniziata!"},
+      {"triggerAt": 120, "event": "divine_blessing", "message": "La benedizione divina ti accompagna!"}
+    ],
+    "victorySpeech": "Congratulazioni! Hai salvato la vendemmia italiana! Il tuo nome sarà ricordato per sempre come il Maestro Vignaiolo che sconfisse il Rosso Macchiato!",
+    "defeatSpeech": "Il Rosso Macchiato ha vinto... Ma non tutto è perduto. La prossima stagione offre una nuova speranza.",
+    "perfectVictorySpeech": "LEGGENDARIO! Hai completato una vittoria perfetta! Sei diventato una leggenda vivente del vino italiano!"
+  },
+  "achievements": [
+    {"id": "legendary_master", "name": "Maestro Leggendario", "condition": "complete_final_level"},
+    {"id": "perfect_salvation", "name": "Salvezza Perfetta", "condition": "perfect_score_final"},
+    {"id": "wine_savior", "name": "Salvatore del Vino", "condition": "defeat_boss_core"},
+    {"id": "italian_hero", "name": "Eroe Italiano", "condition": "complete_all_objectives"},
+    {"id": "grape_legend", "name": "Leggenda dell'Acino", "condition": "use_all_powerups"}
+  ]
+}

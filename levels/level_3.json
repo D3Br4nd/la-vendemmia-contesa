@@ -1,0 +1,81 @@
+{
+  "level": 3,
+  "name": "I Grappoli Alti",
+  "difficulty": "medium",
+  "narrative": "I grappoli più alti nascondono il segreto del Rosso Macchiato... Solo i vignaioli più abili riescono a raggiungerli. Dimostra la tua maestria!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Non superare i 35 lanci",
+    "bonus": "Elimina tutti gli acini della fila superiore"
+  },
+  "grapes": [
+    {"col": 2, "row": 0, "color": "aglianico", "type": "macchiato"},
+    {"col": 3, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 0, "color": "greco", "type": "macchiato"},
+    
+    {"col": 1, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 1, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 2, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 3, "color": "fiano", "type": "macchiato"},
+    {"col": 4, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 4, "color": "aglianico", "type": "normal"},
+    
+    {"col": 2, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 5, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 5, "color": "aglianico", "type": "normal"}
+  ],
+  "powerUps": [
+    {"type": "precision_shot", "position": {"col": 3, "row": 6}, "uses": 1}
+  ],
+  "timeLimit": null,
+  "maxShots": 40,
+  "scoring": {
+    "grapeMatch": 120,
+    "macchiatoDrop": 600,
+    "levelComplete": 1500,
+    "shotBonus": 35,
+    "perfectBonus": 2500,
+    "heightBonus": 100,
+    "precisionBonus": 300
+  },
+  "hints": [
+    "I colpi di precisione sono fondamentali per i grappoli alti",
+    "Usa le pareti per rimbalzare e raggiungere posizioni difficili",
+    "La gravità può aiutarti - calcola bene le traiettorie",
+    "I power-up appaiono dopo aver eliminato gruppi grandi"
+  ],
+  "environment": {
+    "weather": "partly_cloudy",
+    "timeOfDay": "noon",
+    "season": "autumn",
+    "wind": "light",
+    "height": "elevated"
+  },
+  "culturalElements": {
+    "region": "Montefusco",
+    "wineType": "Fiano di Avellino DOCG",
+    "tradition": "Raccolta sui terrazzamenti",
+    "saying": "In alto si va, in alto si sta"
+  }
+}

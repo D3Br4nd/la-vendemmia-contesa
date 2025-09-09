@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background pulsante -->
+  <rect x="2" y="2" width="116" height="56" 
+        fill="rgb(139,69,19)" stroke="rgb(0,0,0)" stroke-width="2" 
+        rx="8" ry="8"/>
+  
+  <!-- Effetto 3D -->
+  <rect x="4" y="4" width="112" height="20" 
+        fill="rgba(255,255,255,0.2)" rx="4" ry="4"/>
+  
+  <!-- Testo -->
+  <text x="60" y="36" 
+        font-family="Arial, sans-serif" font-size="16" font-weight="bold"
+        text-anchor="middle" fill="white">Play</text>
+</svg>

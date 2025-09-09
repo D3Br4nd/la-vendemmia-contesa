@@ -1,0 +1,239 @@
+# La Vendemmia Contesa - Git Ignore
+# Versione: 1.1 - Natale 2025 Rosso Macchiato
+
+# Environment and Config Files
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+config.local.php
+config.production.php
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js (if using build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build and Distribution
+build/
+dist/
+public/build/
+*.min.js
+*.min.css
+.cache/
+.parcel-cache/
+
+# Logs
+logs/
+*.log
+volume/logs/
+error.log
+access.log
+debug.log
+
+# Database
+*.sql
+*.sqlite
+*.db
+volume/database/
+backups/
+*.backup
+
+# Cache and Temporary Files
+cache/
+tmp/
+temp/
+.tmp/
+*.tmp
+*.cache
+volume/cache/
+.htaccess.bak
+
+# User Generated Content
+volume/saves/
+volume/uploads/
+volume/user_data/
+leaderboard_backup/
+user_scores.csv
+
+# Security Sensitive
+private_keys/
+certificates/
+*.pem
+*.key
+*.crt
+api_keys.txt
+secrets.json
+
+# Development and Testing
+tests/coverage/
+.nyc_output/
+coverage/
+.coverage
+phpunit.xml
+test_results/
+debug/
+
+# Documentation Build
+docs/_build/
+site/
+_site/
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*_backup.*
+backup_*
+
+# Compressed Files (unless needed)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.gz
+
+# Media Files (large originals)
+assets/sources/
+assets/raw/
+assets/uncompressed/
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xcf
+
+# PHP Specific
+vendor/
+composer.lock
+.phpunit.result.cache
+
+# Analytics and Tracking
+analytics/
+tracking/
+.google-analytics
+.gtag
+
+# Local Development
+local/
+dev/
+sandbox/
+experiments/
+
+# Version Control
+.git/
+.gitattributes
+.gitmodules
+
+# Deployment
+deploy/
+deployment/
+.deploy/
+*.deploy
+
+# Performance and Monitoring
+.lighthouse/
+performance/
+monitoring/
+
+# Mobile Development
+platforms/
+plugins/
+www/
+.cordova/
+
+# Error Reports
+error_reports/
+crash_reports/
+bug_reports/
+
+# Miscellaneous
+*.orig
+*.patch
+.vimrc
+.bashrc.local
+.profile.local
+
+# Project Specific Exclusions
+volume/live_editing/
+api/test_endpoints/
+debug_console/
+test_levels/
+experimental_features/
+
+# CDN and External Resources (if cached locally)
+cdn_cache/
+external_libs/
+third_party_cache/
+
+# SEO and Marketing
+sitemap_cache/
+seo_reports/
+marketing_assets/temp/
+
+# Legal and Compliance
+gdpr_logs/
+privacy_audit/
+compliance_reports/
+
+# A/B Testing
+ab_test_data/
+experiment_results/
+variant_cache/
+
+# Christmas Event Specific (temporary files)
+event_cache/
+seasonal_data/temp/
+christmas_overrides/
+
+# Wine Database (if separate from main DB)
+wine_data/cache/
+varietal_cache/
+vintage_temp/
+
+# Italian Localization (working files)
+i18n/working/
+translations/temp/
+localization_cache/
+
+# Performance Optimizations (generated)
+sprite_cache/
+texture_atlas_temp/
+audio_compressed/temp/
+
+# Quality Assurance
+qa_reports/
+test_screenshots/
+performance_logs/
+user_feedback/temp/
+
+# Backup Strategy Exclusions
+*.incremental
+daily_backups/temp/
+weekly_archives/temp/
+monthly_snapshots/temp/

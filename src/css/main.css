@@ -1,0 +1,589 @@
+/**
+ * La Vendemmia Contesa - Main CSS
+ * Stili principali per il gioco
+ * Versione: 1.1 - Natale 2025 Rosso Macchiato
+ */
+
+/* Reset e base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c1810 0%, #8b4513 50%, #2c1810 100%);
+    color: #ffffff;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Prevent text selection and highlighting */
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Game container */
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at center, #8b4513 0%, #654321 40%, #2c1810 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#game-container.loaded {
+    opacity: 1;
+}
+
+/* Canvas styling */
+canvas {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    background: #1a1a1a;
+}
+
+/* Loading overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2c1810 0%, #8b4513 50%, #2c1810 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease-out;
+}
+
+#loading-overlay h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    text-align: center;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+#loading-overlay p {
+    font-size: 1.2em;
+    color: #cccccc;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+@keyframes glow {
+    from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px #ffd700; }
+    to { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px #ffd700, 0 0 30px #ffd700; }
+}
+
+/* Loading progress bar */
+.loading-progress {
+    width: 300px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.loading-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ffed4e, #ffd700);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -300px 0; }
+    100% { background-position: 300px 0; }
+}
+
+/* Wine theme decorations */
+.vine-decoration {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.vine-decoration.top-left {
+    top: 20px;
+    left: 20px;
+    transform: rotate(0deg);
+}
+
+.vine-decoration.top-right {
+    top: 20px;
+    right: 20px;
+    transform: rotate(90deg);
+}
+
+.vine-decoration.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+.vine-decoration.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+/* Error messages */
+#game-error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(139, 69, 19, 0.95);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 10001;
+    font-family: inherit;
+    max-width: 350px;
+    border: 3px solid #8b4513;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#game-error h3 {
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+#game-error p {
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+#game-error button {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #8b4513;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#game-error button:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffd700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Fullscreen support */
+.fullscreen-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* HUD Elements Styling */
+.hud-element {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.score-display {
+    color: #ffd700;
+    font-size: 1.2em;
+}
+
+.level-display {
+    color: #ffffff;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.macchiato-display {
+    color: #ff6b6b;
+    font-size: 1.1em;
+}
+
+/* Button styles */
+.game-button {
+    background: linear-gradient(135deg, #8b4513, #a0522d);
+    border: 2px solid #654321;
+    border-radius: 10px;
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game-button:hover {
+    background: linear-gradient(135deg, #a0522d, #8b4513);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.game-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-button.primary {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #8b4513;
+    border-color: #daa520;
+}
+
+.game-button.primary:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffd700);
+}
+
+/* Overlay styles */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 24, 16, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.overlay-content {
+    background: rgba(139, 69, 19, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 90%;
+    border: 3px solid #654321;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-title {
+    font-size: 2.5em;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.overlay-text {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Input field styling */
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1.1em;
+    font-family: inherit;
+    color: #2c1810;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+input[type="text"]::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+/* Toast notifications */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(139, 69, 19, 0.95);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    z-index: 10002;
+    font-weight: bold;
+    border: 2px solid #654321;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: toastSlide 0.3s ease-out;
+}
+
+@keyframes toastSlide {
+    from {
+        transform: translate(-50%, -100px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+/* Grape visual effects */
+.grape-glow {
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.grape-pulse {
+    animation: grapePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes grapePulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Trajectory line styling */
+.trajectory-line {
+    stroke-dasharray: 5, 5;
+    stroke-width: 3;
+    opacity: 0.7;
+    animation: trajectoryDash 1s linear infinite;
+}
+
+@keyframes trajectoryDash {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* Power indicator styling */
+.power-indicator {
+    stroke-width: 5;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+/* Debug info styling */
+.debug-info {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    z-index: 9999;
+    min-width: 200px;
+}
+
+.debug-info h4 {
+    color: #ffff00;
+    margin-bottom: 5px;
+}
+
+.debug-info ul {
+    list-style: none;
+}
+
+.debug-info li {
+    margin: 2px 0;
+}
+
+/* Responsive design helpers */
+.mobile-only {
+    display: block;
+}
+
+.desktop-only {
+    display: none;
+}
+
+/* Animation classes */
+.fadeIn {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s ease-out;
+}
+
+.slideInUp {
+    animation: slideInUp 0.5s ease-out;
+}
+
+.slideInDown {
+    animation: slideInDown 0.5s ease-out;
+}
+
+.scaleIn {
+    animation: scaleIn 0.3s ease-out;
+}
+
+.bounce {
+    animation: bounce 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+    40%, 43% { transform: translate3d(0,-10px,0); }
+    70% { transform: translate3d(0,-5px,0); }
+    90% { transform: translate3d(0,-2px,0); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus indicators for accessibility */
+button:focus, input:focus {
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .game-button {
+        border-width: 3px;
+    }
+    
+    .overlay-content {
+        border-width: 4px;
+    }
+    
+    input[type="text"] {
+        border-width: 3px;
+    }
+}
+
+/* Print styles (hide game elements) */
+@media print {
+    #game-container, #loading-overlay, .game-overlay {
+        display: none !important;
+    }
+}
+
+/* Landscape orientation message for mobile */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .landscape-warning {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10003;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .landscape-warning h2 {
+        margin-bottom: 15px;
+        color: #ffd700;
+    }
+    
+    .landscape-warning p {
+        font-size: 1.1em;
+        line-height: 1.4;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(44, 24, 16, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8b4513;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0522d;
+}
+
+/* Selection styling */
+::selection {
+    background: rgba(255, 215, 0, 0.3);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(255, 215, 0, 0.3);
+    color: inherit;
+}

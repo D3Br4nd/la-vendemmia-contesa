@@ -1,0 +1,118 @@
+{
+  "level": 7,
+  "name": "Le Radici Profonde",
+  "difficulty": "hard",
+  "narrative": "Le radici profonde custodiscono memorie oscure... Nei sotterranei della vigna, il Rosso Macchiato ha trovato la sua fonte. Scendi nelle profondità e affronta l'origine del male!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Scopri il segreto delle radici profonde",
+    "bonus": "Attiva tutti i power-up radicali"
+  },
+  "grapes": [
+    {"col": 1, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 1, "color": "greco", "type": "macchiato"},
+    {"col": 2, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 1, "color": "aglianico", "type": "macchiato"},
+    {"col": 6, "row": 1, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 2, "color": "fiano", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 3, "color": "fiano", "type": "macchiato"},
+    {"col": 3, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 2, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 4, "color": "greco", "type": "macchiato"},
+    
+    {"col": 1, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 5, "color": "greco", "type": "normal"},
+    
+    {"col": 0, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 6, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 6, "color": "aglianico", "type": "macchiato"},
+    {"col": 4, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 6, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 6, "color": "aglianico", "type": "normal"},
+    
+    {"col": 2, "row": 7, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 7, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 7, "color": "aglianico", "type": "normal"}
+  ],
+  "powerUps": [
+    {"type": "root_network", "position": {"col": 0, "row": 8}, "uses": 2},
+    {"type": "deep_strike", "position": {"col": 3, "row": 9}, "uses": 3},
+    {"type": "ancient_wisdom", "position": {"col": 6, "row": 8}, "uses": 1},
+    {"type": "underground_tunnel", "position": {"col": 1, "row": 9}, "uses": 2},
+    {"type": "root_explosion", "position": {"col": 5, "row": 9}, "uses": 1}
+  ],
+  "timeLimit": null,
+  "maxShots": 70,
+  "scoring": {
+    "grapeMatch": 180,
+    "macchiatoDrop": 1000,
+    "levelComplete": 3000,
+    "shotBonus": 15,
+    "perfectBonus": 5000,
+    "depthBonus": 1200,
+    "rootBonus": 900,
+    "mysteryBonus": 1500,
+    "ancientBonus": 2000
+  },
+  "hints": [
+    "Le radici connettono tutto - usa questa connessione",
+    "I power-up profondi hanno effetti devastanti",
+    "Scava in profondità per trovare la verità",
+    "Le memorie antiche rivelano strategie segrete"
+  ],
+  "environment": {
+    "weather": "mysterious",
+    "timeOfDay": "twilight",
+    "season": "late_autumn",
+    "wind": "underground",
+    "depth": "deep",
+    "ambiance": "ancient",
+    "lighting": "dim_underground",
+    "sounds": ["deep_echoes", "root_whispers", "ancient_murmurs"]
+  },
+  "culturalElements": {
+    "region": "Cilento",
+    "wineType": "Aglianico del Cilento DOC",
+    "tradition": "Vigne centenarie dalle radici profonde",
+    "saying": "Radici profonde, frutti duraturi",
+    "folklore": "Le radici antiche custodiscono segreti",
+    "history": "Vigne piantate dai nonni dei nonni",
+    "wisdom": "Sotto terra giace la verità del vino"
+  },
+  "specialMechanics": {
+    "rootNetwork": true,
+    "deepLayerAccess": true,
+    "ancientPowerUps": true,
+    "undergroundConnections": true,
+    "memoryFlashbacks": [
+      {"triggerAt": 20, "message": "Ricordi antichi emergono dalle radici..."},
+      {"triggerAt": 40, "message": "I predecessori sussurrano strategie..."},
+      {"triggerAt": 60, "message": "La saggezza ancestrale si risveglia..."}
+    ]
+  }
+}

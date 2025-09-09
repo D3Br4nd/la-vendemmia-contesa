@@ -1,0 +1,132 @@
+{
+  "level": 8,
+  "name": "Il Tramonto Rosso",
+  "difficulty": "hard",
+  "narrative": "Il sole al tramonto tinge tutto di rosso... L'ora dorata nasconde l'inganno più grande: il Rosso Macchiato si mimetizza tra i riflessi del sole. Solo l'occhio più esperto può distinguere la verità!",
+  "objectives": {
+    "primary": "Elimina tutti gli acini macchiati",
+    "secondary": "Non sbagliare più di 3 colpi",
+    "bonus": "Completa durante l'ora dorata"
+  },
+  "grapes": [
+    {"col": 0, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 1, "row": 0, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 0, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 0, "color": "fiano", "type": "macchiato"},
+    {"col": 5, "row": 0, "color": "greco", "type": "normal"},
+    {"col": 6, "row": 0, "color": "aglianico", "type": "normal"},
+    
+    {"col": 0, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 1, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 2, "row": 1, "color": "aglianico", "type": "macchiato"},
+    {"col": 3, "row": 1, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 1, "color": "greco", "type": "normal"},
+    {"col": 5, "row": 1, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 1, "color": "fiano", "type": "normal"},
+    
+    {"col": 1, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 2, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 2, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 2, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 2, "color": "fiano", "type": "normal"},
+    
+    {"col": 0, "row": 3, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 3, "color": "greco", "type": "macchiato"},
+    {"col": 4, "row": 3, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 3, "color": "fiano", "type": "normal"},
+    {"col": 6, "row": 3, "color": "greco", "type": "normal"},
+    
+    {"col": 1, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 4, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 4, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 4, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 4, "color": "aglianico", "type": "macchiato"},
+    
+    {"col": 0, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 1, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 2, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 3, "row": 5, "color": "greco", "type": "normal"},
+    {"col": 4, "row": 5, "color": "fiano", "type": "normal"},
+    {"col": 5, "row": 5, "color": "aglianico", "type": "normal"},
+    {"col": 6, "row": 5, "color": "greco", "type": "normal"},
+    
+    {"col": 2, "row": 6, "color": "fiano", "type": "normal"},
+    {"col": 3, "row": 6, "color": "aglianico", "type": "normal"},
+    {"col": 4, "row": 6, "color": "greco", "type": "macchiato"},
+    
+    {"col": 1, "row": 7, "color": "aglianico", "type": "normal"},
+    {"col": 2, "row": 7, "color": "greco", "type": "normal"},
+    {"col": 3, "row": 7, "color": "fiano", "type": "normal"},
+    {"col": 4, "row": 7, "color": "aglianico", "type": "normal"},
+    {"col": 5, "row": 7, "color": "greco", "type": "normal"},
+    
+    {"col": 3, "row": 8, "color": "fiano", "type": "macchiato"}
+  ],
+  "powerUps": [
+    {"type": "golden_vision", "position": {"col": 0, "row": 9}, "uses": 3},
+    {"type": "sunset_beam", "position": {"col": 2, "row": 9}, "uses": 2},
+    {"type": "true_sight", "position": {"col": 4, "row": 9}, "uses": 1},
+    {"type": "precision_scope", "position": {"col": 6, "row": 9}, "uses": 2}
+  ],
+  "timeLimit": 180,
+  "maxShots": 65,
+  "scoring": {
+    "grapeMatch": 200,
+    "macchiatoDrop": 1200,
+    "levelComplete": 3500,
+    "shotBonus": 10,
+    "perfectBonus": 6000,
+    "precisionBonus": 1500,
+    "goldenHourBonus": 2000,
+    "visionBonus": 1000,
+    "masteryBonus": 2500
+  },
+  "hints": [
+    "La luce del tramonto può ingannare - osserva attentamente",
+    "Gli acini macchiati si nascondono tra i riflessi dorati",
+    "La Vista Aurea rivela la vera natura degli acini",
+    "Durante l'ora dorata tutto è più prezioso"
+  ],
+  "environment": {
+    "weather": "clear",
+    "timeOfDay": "golden_hour",
+    "season": "late_autumn",
+    "wind": "gentle",
+    "lighting": "golden_sunset",
+    "ambiance": "deceptive_beauty",
+    "visualEffects": ["golden_glow", "light_refraction", "color_shifts"],
+    "sounds": ["gentle_breeze", "distant_bells", "rustling_vines"]
+  },
+  "culturalElements": {
+    "region": "Amalfi",
+    "wineType": "Costa d'Amalfi DOC",
+    "tradition": "Vendemmia al tramonto sui terrazzamenti",
+    "saying": "Oro del tramonto, vino del cuore",
+    "folklore": "Il sole morente benedice l'ultima raccolta",
+    "poetry": "Quando il sole bacia la vigna addio",
+    "romance": "L'ora più bella per la vendemmia"
+  },
+  "specialMechanics": {
+    "goldenHourEffect": true,
+    "visualDeception": true,
+    "colorCamouflage": true,
+    "lightBasedPowerUps": true,
+    "timeBasedBonuses": true,
+    "difficultyVariation": {
+      "earlyGame": "enhanced_visibility",
+      "midGame": "moderate_deception", 
+      "lateGame": "maximum_camouflage"
+    },
+    "dynamicLighting": {
+      "phases": [
+        {"time": 0, "lighting": "warm_golden"},
+        {"time": 60, "lighting": "deep_orange"},
+        {"time": 120, "lighting": "red_twilight"},
+        {"time": 180, "lighting": "purple_dusk"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>La Vendemmia Contesa - Natale 2025</title>
+    
+    <!-- Mobile optimization -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/icons/icon_app_128x128.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/mobile.css">
+    
+    <!-- Phaser.js -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-canvas"></div>
+        <div id="loading-screen">
+            <div class="loading-content">
+                <h1>La Vendemmia Contesa</h1>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p>Caricamento in corso...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Scripts -->
+    <script src="src/js/utils/constants.js"></script>
+    <script src="src/js/utils/helpers.js"></script>
+    <script src="src/js/components/Grape.js"></script>
+    <script src="src/js/components/GridManager.js"></script>
+    <script src="src/js/components/Shooter.js"></script>
+    <script src="src/js/components/UIManager.js"></script>
+    <script src="src/js/scenes/MenuScene.js"></script>
+    <script src="src/js/scenes/GameScene.js"></script>
+    <script src="src/js/scenes/GameOverScene.js"></script>
+    <script src="src/js/game.js"></script>
+</body>
+</html>
