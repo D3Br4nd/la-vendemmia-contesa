@@ -21,6 +21,9 @@ COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker/php-fpm.conf /etc/php82/php-fpm.d/www.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# Create log directories
+RUN mkdir -p /var/log/supervisor
+
 # Development volumes will be mounted
 EXPOSE 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
@@ -63,7 +66,7 @@ COPY levels/ /usr/share/nginx/html/levels/
 COPY src/php/ /var/www/html/
 
 # Create required directories
-RUN mkdir -p /var/www/html /usr/share/nginx/html/data
+RUN mkdir -p /var/www/html /usr/share/nginx/html/data /var/log/supervisor
 
 # Set proper permissions
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
