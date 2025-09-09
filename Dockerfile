@@ -5,13 +5,12 @@ FROM nginx:alpine AS development
 
 # Install development tools
 RUN apk add --no-cache \
-    php81 \
-    php81-fpm \
-    php81-session \
-    php81-json \
-    php81-mbstring \
-    php81-openssl \
-    php81-dev \
+    php82 \
+    php82-fpm \
+    php82-session \
+    php82-json \
+    php82-mbstring \
+    php82-openssl \
     supervisor \
     curl \
     nodejs \
@@ -19,7 +18,7 @@ RUN apk add --no-cache \
 
 # Copy development configurations
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY docker/php-fpm.conf /etc/php81/php-fpm.d/www.conf
+COPY docker/php-fpm.conf /etc/php82/php-fpm.d/www.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Development volumes will be mounted
@@ -36,12 +35,12 @@ LABEL version="1.0"
 
 # Install only production dependencies
 RUN apk add --no-cache \
-    php81 \
-    php81-fpm \
-    php81-session \
-    php81-json \
-    php81-mbstring \
-    php81-openssl \
+    php82 \
+    php82-fpm \
+    php82-session \
+    php82-json \
+    php82-mbstring \
+    php82-openssl \
     supervisor \
     curl \
     && rm -rf /var/cache/apk/*
@@ -51,7 +50,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy configurations
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-COPY docker/php-fpm.conf /etc/php81/php-fpm.d/www.conf
+COPY docker/php-fpm.conf /etc/php82/php-fpm.d/www.conf
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Copy application files (excluding development files)
