@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - La Vendemmia Contesa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #2c1810;
+            color: white;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #8b4513;
+            border-radius: 8px;
+            background: rgba(139, 69, 19, 0.2);
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        .status.ok { background: #4CAF50; }
+        .status.error { background: #f44336; }
+        .status.warn { background: #ff9800; }
+        #game-canvas {
+            width: 375px;
+            height: 667px;
+            border: 2px solid #8b4513;
+            background: #1a1a1a;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Diagnostico - La Vendemmia Contesa</h1>
+    
+    <div class="test-section">
+        <h3>1. Caricamento Script</h3>
+        <div id="script-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>2. Phaser.js</h3>
+        <div id="phaser-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>3. Canvas Support</h3>
+        <div id="canvas-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>4. WebGL Support</h3>
+        <div id="webgl-status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>5. Game Initialization</h3>
+        <div id="game-status"></div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- Test Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+    <script>
+        function setStatus(id, message, type = 'ok') {
+            const element = document.getElementById(id);
+            element.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        // Test 1: Script loading
+        try {
+            setStatus('script-status', 'Test script caricato correttamente', 'ok');
+        } catch (e) {
+            setStatus('script-status', 'Errore caricamento script: ' + e.message, 'error');
+        }
+
+        // Test 2: Phaser.js
+        if (typeof Phaser !== 'undefined') {
+            setStatus('phaser-status', `Phaser.js caricato - Versione: ${Phaser.VERSION}`, 'ok');
+        } else {
+            setStatus('phaser-status', 'Phaser.js non trovato', 'error');
+        }
+
+        // Test 3: Canvas support
+        try {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            if (ctx) {
+                setStatus('canvas-status', 'Canvas 2D supportato', 'ok');
+            } else {
+                setStatus('canvas-status', 'Canvas 2D non supportato', 'error');
+            }
+        } catch (e) {
+            setStatus('canvas-status', 'Errore test Canvas: ' + e.message, 'error');
+        }
+
+        // Test 4: WebGL support
+        try {
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (gl) {
+                setStatus('webgl-status', 'WebGL supportato', 'ok');
+            } else {
+                setStatus('webgl-status', 'WebGL non supportato - userà Canvas', 'warn');
+            }
+        } catch (e) {
+            setStatus('webgl-status', 'Errore test WebGL: ' + e.message, 'warn');
+        }
+
+        // Test 5: Simple Phaser game
+        if (typeof Phaser !== 'undefined') {
+            try {
+                const config = {
+                    type: Phaser.CANVAS,
+                    width: 375,
+                    height: 667,
+                    parent: 'game-canvas',
+                    backgroundColor: '#2c1810',
+                    scene: {
+                        create: function() {
+                            this.add.text(375/2, 667/2, 
+                                'La Vendemmia Contesa\\nTest Riuscito!', 
+                                { 
+                                    fontSize: '24px', 
+                                    color: '#ffd700', 
+                                    align: 'center' 
+                                }
+                            ).setOrigin(0.5);
+                            
+                            setStatus('game-status', 'Phaser inizializzato correttamente', 'ok');
+                        }
+                    }
+                };
+                
+                const game = new Phaser.Game(config);
+                
+            } catch (e) {
+                setStatus('game-status', 'Errore inizializzazione Phaser: ' + e.message, 'error');
+                console.error('Phaser error:', e);
+            }
+        } else {
+            setStatus('game-status', 'Phaser non disponibile per il test', 'error');
+        }
+    </script>
+</body>
+</html>
