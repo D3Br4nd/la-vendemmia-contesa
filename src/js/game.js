@@ -14,8 +14,12 @@ const gameConfig = {
     type: Phaser.AUTO,
     width: GAME_CONFIG.WIDTH,
     height: GAME_CONFIG.HEIGHT,
-    parent: 'game-container', // HTML element ID where game will be mounted
+    parent: 'game-canvas', // HTML element ID where game will be mounted
     backgroundColor: COLORS.UI_DARK,
+    
+    // Canvas configuration for better compatibility
+    canvas: null,
+    canvasStyle: null,
     
     // Physics configuration
     physics: {
@@ -36,7 +40,7 @@ const gameConfig = {
     // Scale configuration for mobile responsiveness
     scale: {
         mode: Phaser.Scale.FIT,
-        parent: 'game-container',
+        parent: 'game-canvas',
         autoCenter: Phaser.Scale.CENTER_BOTH,
         width: GAME_CONFIG.WIDTH,
         height: GAME_CONFIG.HEIGHT,
@@ -422,16 +426,33 @@ function showErrorMessage(message) {
  * Initialize game when DOM is ready
  */
 function initializeGame() {
+    DebugUtils.log('INFO', 'Starting game initialization...');
+    
     // Check if game container exists
     const gameContainer = document.getElementById('game-container');
+    const gameCanvas = document.getElementById('game-canvas');
+    
     if (!gameContainer) {
         DebugUtils.log('ERROR', 'Game container not found!');
         showErrorMessage('Errore di inizializzazione. Controlla che il container del gioco sia presente.');
         return;
     }
     
+    if (!gameCanvas) {
+        DebugUtils.log('ERROR', 'Game canvas element not found!');
+        showErrorMessage('Errore di inizializzazione. Container canvas non trovato.');
+        return;
+    }
+    
+    // Check WebGL support
+    if (!checkWebGLSupport()) {
+        DebugUtils.log('WARN', 'WebGL not supported, falling back to Canvas');
+        gameConfig.type = Phaser.CANVAS;
+    }
+    
     // Create Phaser game instance
     try {
+        DebugUtils.log('INFO', 'Creating Phaser game instance...');
         game = new Phaser.Game(gameConfig);
         
         // Store game instance globally for debugging
@@ -443,7 +464,34 @@ function initializeGame() {
         
     } catch (error) {
         DebugUtils.log('ERROR', 'Failed to initialize game:', error);
-        showErrorMessage('Errore durante l\'inizializzazione del gioco.');
+        
+        // Try fallback with Canvas renderer
+        if (gameConfig.type !== Phaser.CANVAS) {
+            DebugUtils.log('INFO', 'Retrying with Canvas renderer...');
+            gameConfig.type = Phaser.CANVAS;
+            try {
+                game = new Phaser.Game(gameConfig);
+                DebugUtils.log('INFO', 'Game initialized with Canvas renderer');
+            } catch (fallbackError) {
+                DebugUtils.log('ERROR', 'Canvas fallback also failed:', fallbackError);
+                showErrorMessage('Errore durante l\'inizializzazione del gioco. Browser non supportato.');
+            }
+        } else {
+            showErrorMessage('Errore durante l\'inizializzazione del gioco.');
+        }
+    }
+}
+
+/**
+ * Check WebGL support
+ */
+function checkWebGLSupport() {
+    try {
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+        return !!gl;
+    } catch (e) {
+        return false;
     }
 }
 

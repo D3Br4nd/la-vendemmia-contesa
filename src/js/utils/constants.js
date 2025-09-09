@@ -40,6 +40,10 @@ const GRID_CONFIG = {
 const GAME_CONFIG = {
     WIDTH: 375,  // iPhone portrait width
     HEIGHT: 667, // iPhone portrait height
+    MIN_WIDTH: 320,  // Minimum supported width
+    MIN_HEIGHT: 480, // Minimum supported height
+    MAX_WIDTH: 768,  // Maximum supported width
+    MAX_HEIGHT: 1024, // Maximum supported height
     BACKGROUND_COLOR: '#2c1810',
     MAX_LIVES: 3,
     POINTS_PER_GRAPE: 10,
@@ -63,6 +67,7 @@ const COLORS = {
     MACCHIATO: 0x1C1C1C,                // Dark spots
     UI_PRIMARY: 0x8B4513,               // Saddle brown
     UI_SECONDARY: 0xDEB887,             // Burlywood
+    UI_DARK: 0x2c1810,                  // Dark background
     TEXT_PRIMARY: 0xFFFFFF,             // White
     TEXT_SECONDARY: 0xF5DEB3,           // Wheat
     DANGER: 0xFF6B6B,                   // Red warning
