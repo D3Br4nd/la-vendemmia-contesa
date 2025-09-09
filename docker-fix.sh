@@ -4,6 +4,11 @@
 
 echo "🍇 La Vendemmia Contesa - Docker Quick Fix"
 echo "=========================================="
+echo "✅ Fixed: PHP packages updated to php82"
+echo "✅ Fixed: Supervisor log directories created"
+echo "✅ Fixed: Docker compose version removed"
+echo "✅ Fixed: Nginx gzip_proxied directive corrected"
+echo ""
 
 # Stop container attuale
 echo "🛑 Stopping current container..."
@@ -11,7 +16,7 @@ docker-compose down
 
 # Rebuild with cache clear per essere sicuri
 echo "🔨 Rebuilding image with fixes..."
-docker build --no-cache --target production -t vendemmia-contesa:latest .
+docker build --no-cache -t vendemmia-contesa:latest .
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful!"

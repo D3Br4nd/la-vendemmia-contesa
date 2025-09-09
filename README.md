@@ -127,7 +127,7 @@ ORGANIZATION="Comitato Per Aspera ad Astra"
 
 ```bash
 # Build immagine Docker
-docker build --target production -t vendemmia-contesa:latest .
+docker build -t vendemmia-contesa:latest .
 
 # Avvio container
 docker-compose up -d
@@ -187,7 +187,7 @@ docker logs vendemmia-contesa
 
 ### **Modalità Development**
 ```bash
-# Build development
+# Build development (opzionale)
 docker build --target development -t vendemmia-contesa:dev .
 
 # Avvio con live reload
