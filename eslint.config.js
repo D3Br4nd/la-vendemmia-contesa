@@ -1,51 +1,58 @@
-const globals = require("globals");
-const js = require("@eslint/js");
-
 module.exports = [
-  js.configs.recommended,
   {
+    files: ["src/js/**/*.js"],
     languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: "script",
       globals: {
-        ...globals.browser,
-        ...globals.jquery,
+        // Phaser
         Phaser: "readonly",
-        GAME_STATES: "readonly",
-        GRAPE_TYPES: "readonly",
-        GRAPE_COLORS: "readonly",
-        GRID_CONFIG: "readonly",
-        GAME_CONFIG: "readonly",
-        PHYSICS: "readonly",
-        COLORS: "readonly",
-        UI_CONFIG: "readonly",
-        AUDIO_CONFIG: "readonly",
-        LEVEL_CONFIG: "readonly",
-        INPUT_CONFIG: "readonly",
-        ANIMATION_CONFIG: "readonly",
-        DEBUG_CONFIG: "readonly",
-        API_CONFIG: "readonly",
-        MathUtils: "readonly",
-        GridUtils: "readonly",
-        ColorUtils: "readonly",
-        ArrayUtils: "readonly",
-        InputUtils: "readonly",
-        UIUtils: "readonly",
-        StorageUtils: "readonly",
-        DebugUtils: "readonly",
-        AudioUtils: "readonly",
+        // Game Scenes
+        MenuScene: "readonly",
+        GameScene: "readonly",
+        GameOverScene: "readonly",
+        // Game Components
         Grape: "readonly",
         GridManager: "readonly",
         Shooter: "readonly",
         UIManager: "readonly",
-        MenuScene: "readonly",
-        GameScene: "readonly",
-        GameOverScene: "readonly",
+        // Utils
+        GAME_CONFIG: "readonly",
+        COLORS: "readonly",
+        PHYSICS: "readonly",
+        GRID: "readonly",
+        GRAPE_TYPES: "readonly",
         SHOOTER_CONFIG: "readonly",
-        gtag: "readonly"
-      }
+        UI_SETTINGS: "readonly",
+        AUDIO_CONFIG: "readonly",
+        LEVELS_CONFIG: "readonly",
+        DEBUG_CONFIG: "readonly",
+        MathUtils: "readonly",
+        GridUtils: "readonly",
+        UIUtils: "readonly",
+        AudioUtils: "readonly",
+        StorageUtils: "readonly",
+        DebugUtils: "readonly",
+        // Game main object
+        VendemmiaGame: "readonly",
+        // Browser
+        window: "readonly",
+        document: "readonly",
+        console: "readonly",
+        localStorage: "readonly",
+        setTimeout: "readonly",
+        setInterval: "readonly",
+        clearTimeout: "readonly",
+        clearInterval: "readonly",
+        requestAnimationFrame: "readonly",
+        gtag: "readonly",
+        performance: "readonly",
+        location: "readonly"
+      },
     },
     rules: {
       "no-unused-vars": "warn",
-      "no-undef": "warn"
-    }
-  }
+      "no-undef": "error",
+    },
+  },
 ];

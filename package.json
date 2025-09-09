@@ -1,23 +1,4 @@
 {
-  "name": "la-vendemmia-contesa",
-  "version": "1.0.0",
-  "description": "**Bubble Shooter Mobile-First con Tema Vino Italiano**   *Versione: 1.1 - Natale 2025 Rosso Macchiato*   *Comitato \"Per Aspera ad Astra\" - Pro Loco Venticano*",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/D3Br4nd/la-vendemmia-contesa.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/D3Br4nd/la-vendemmia-contesa/issues"
-  },
-  "homepage": "https://github.com/D3Br4nd/la-vendemmia-contesa#readme",
   "devDependencies": {
     "eslint": "^9.35.0"
   }

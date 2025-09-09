@@ -11,7 +11,7 @@ let game = null;
  * Game configuration for Phaser.js
  */
 const gameConfig = {
-    type: Phaser.AUTO,
+    type: Phaser.CANVAS,
     width: GAME_CONFIG.WIDTH,
     height: GAME_CONFIG.HEIGHT,
     parent: 'game-canvas', // HTML element ID where game will be mounted
