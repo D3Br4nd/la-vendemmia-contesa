@@ -1,7 +1,7 @@
 # Multi-stage Dockerfile for La Vendemmia Contesa
 
 # Development stage
-FROM nginx:alpine as development
+FROM nginx:alpine AS development
 
 # Install development tools
 RUN apk add --no-cache \
@@ -27,7 +27,7 @@ EXPOSE 80
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Production stage
-FROM nginx:alpine as production
+FROM nginx:alpine AS production
 
 # Set maintainer info
 LABEL maintainer="Comitato PAAA <paaa@example.com>"
@@ -56,7 +56,6 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Copy application files (excluding development files)
 COPY index.html /usr/share/nginx/html/
-COPY asset_preview.html /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
 COPY src/ /usr/share/nginx/html/src/
 COPY levels/ /usr/share/nginx/html/levels/

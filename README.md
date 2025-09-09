@@ -1,369 +1,391 @@
-# 🍇 Setup Manuale - La Vendemmia Contesa
+# 🍇 La Vendemmia Contesa - Game Setup Guide
+**Bubble Shooter Mobile-First con Tema Vino Italiano**  
+*Versione: 1.1 - Natale 2025 Rosso Macchiato*  
+*Comitato "Per Aspera ad Astra" - Pro Loco Venticano*
 
-## Prerequisiti e Configurazione di Base
+---
 
-Prima di iniziare, verifica di avere:
-- **Docker** installato e funzionante
-- **Docker Compose** installato
-- **Nginx Proxy Manager** già configurato sulla rete `plv_network`
-- **Accesso** alla directory del progetto
+## 📋 **Panoramica Progetto**
 
-## 1. Configurazione Iniziale
+**La Vendemmia Contesa** è un gioco bubble shooter mobile-first completamente sviluppato che celebra la tradizione vinicola italiana. Il gioco include 10 livelli narrativi, 3 varietà di uva (Aglianico, Fiano, Greco), sistema di classifica e backend PHP completo.
 
-### Verifica Rete Docker PLV
-Prima di tutto, assicurati che la rete Docker esista:
+### 🎮 **Caratteristiche Principali**
+- **10 Livelli Narrativi** con ambientazioni italiane autentiche
+- **Mobile-First Design** ottimizzato per smartphone
+- **3 Varietà Uva**: Aglianico, Fiano, Greco + Acini Macchiati
+- **Meccaniche Uniche**: Terremoti, ombre uccelli, effetti lunari
+- **Boss Fight Finale**: Il Cuore del Rosso Macchiato
+- **Sistema Classifica** con backend PHP
+- **Audio Completo**: Musiche di sottofondo + effetti sonori
+
+### 📁 **Struttura Files (24 Files Completati)**
+```
+la-vendemmia-contesa/
+├── index.html                    # Pagina principale
+├── .gitignore                   # Git ignore professionale
+├── ASSET_REFERENCE.md           # Documentazione asset
+│
+├── src/
+│   ├── js/
+│   │   ├── utils/
+│   │   │   ├── constants.js     # Costanti gioco
+│   │   │   └── helpers.js       # Funzioni utilità
+│   │   ├── components/
+│   │   │   ├── Grape.js         # Classe acino
+│   │   │   ├── GridManager.js   # Gestione griglia
+│   │   │   ├── Shooter.js       # Sistema lancio
+│   │   │   └── UIManager.js     # Interfaccia utente
+│   │   ├── scenes/
+│   │   │   ├── MenuScene.js     # Menu principale
+│   │   │   ├── GameScene.js     # Gioco principale
+│   │   │   └── GameOverScene.js # Game over
+│   │   └── game.js             # Inizializzazione Phaser.js
+│   │
+│   └── css/
+│       ├── main.css            # Stili principali
+│       └── mobile.css          # Ottimizzazioni mobile
+│
+├── levels/                     # Configurazioni livelli
+│   ├── level_1.json           # L'Inizio della Vendemmia
+│   ├── level_2.json           # Il Vento del Nord
+│   ├── level_3.json           # I Grappoli Alti
+│   ├── level_4.json           # Il Sussurro delle Foglie
+│   ├── level_5.json           # La Luna Piena
+│   ├── level_6.json           # Il Tremore della Terra
+│   ├── level_7.json           # Le Radici Profonde
+│   ├── level_8.json           # Il Tramonto Rosso
+│   ├── level_9.json           # L'Ombra degli Uccelli
+│   └── level_10.json          # L'Ultima Battaglia
+│
+└── assets/                    # Asset grafici e audio
+    ├── images/
+    │   ├── backgrounds/       # Sfondi livelli (11 files)
+    │   ├── grapes/           # Sprite acini (6 files)
+    │   ├── ui/               # Elementi UI (4 files)
+    │   ├── icons/            # Loghi e icone (3 files)
+    │   └── effects/          # Effetti animazione
+    └── audio/
+        ├── bgm/              # Musiche sottofondo (4 files)
+        └── sfx/              # Effetti sonori (8 files)
+```
+
+---
+
+## 🚀 **Setup e Deploy**
+
+### **Prerequisiti**
+- **Docker** e **Docker Compose** installati
+- **Nginx Proxy Manager** configurato sulla rete `plv_network`
+- **Browser moderno** con supporto HTML5/Canvas
+
+### **1. Configurazione Iniziale**
 
 ```bash
-# Verifica che la rete plv_network esista
+# Clona/scarica il progetto
+cd /path/to/la-vendemmia-contesa
+
+# Verifica rete Docker PLV
 docker network ls | grep plv_network
+
+# Crea directory necessarie
+mkdir -p volume/data logs backups
+chmod -R 755 volume logs
 ```
 
-Se non esiste, contatta l'amministratore di sistema che gestisce gli altri servizi ProLoco.
+### **2. Configurazione Environment**
 
-### Setup Directory e Permessi
 ```bash
-# Vai nella directory del progetto
-cd /Users/debrand/Desktop/tmp/la-vendemmia-contesa
-
-# Crea le directory necessarie
-mkdir -p volume/data
-mkdir -p logs
-mkdir -p backups
-
-# Imposta i permessi corretti
-chmod 755 volume
-chmod 755 volume/data
-chmod 755 logs
-```
-
-### Copia il Codice nell'Area Live
-```bash
-# Copia tutti i file necessari nell'area volume (live editing)
-cp -r assets data levels src index.html asset_preview.html volume/ 2>/dev/null || true
-
-# Imposta permessi per il web server
-chmod -R 755 volume
-```
-
-## 2. Configurazione Environment
-
-### Crea File .env
-```bash
-# Copia il template di configurazione
+# Copia e modifica configurazione
 cp env.example .env
-
-# Modifica la configurazione
 nano .env
 ```
 
-### Configurazione .env Personalizzata
-Edita il file `.env` con i valori appropriati:
-
+**Configurazione .env essenziale:**
 ```bash
-# ===== CONFIGURAZIONE BASE =====
+# Dominio e server
 NGINX_HOST=rm.prolocoventicano.com
 NGINX_PORT=80
 TZ=Europe/Rome
 
-# ===== CONFIGURAZIONE GIOCO =====
+# Gioco
 GAME_NAME="La Vendemmia Contesa"
-GAME_VERSION=1.0
+GAME_VERSION=1.1
 NODE_ENV=production
 
-# ===== CORS E SICUREZZA =====
-ALLOWED_ORIGINS=https://rm.prolocoventicano.com,http://rm.prolocoventicano.com
-MAX_SCORES_PER_IP=3
-SCORE_COOLDOWN=30
-
-# ===== FUNZIONALITÀ =====
+# Sicurezza
+ALLOWED_ORIGINS=https://rm.prolocoventicano.com
 LEADERBOARD_ENABLED=true
 MAINTENANCE_MODE=false
 
-# ===== BRANDING =====
+# Branding
 GAME_TITLE="La Vendemmia Contesa"
 GAME_SUBTITLE="Natale 2025 - Rosso Macchiato"
-ORGANIZATION="Comitato Per Aspera ad Astra - ProLoco Venticano"
+ORGANIZATION="Comitato Per Aspera ad Astra"
 ```
 
-## 3. Build dell'Immagine Docker
+### **3. Build e Deploy**
 
-### Build Immagine di Produzione
 ```bash
-# Build dell'immagine con target produzione
+# Build immagine Docker
 docker build --target production -t vendemmia-contesa:latest .
 
-# Verifica che l'immagine sia stata creata
-docker images | grep vendemmia-contesa
-```
-
-### Opzionale: Build Immagine Development
-Se vuoi testare in modalità sviluppo:
-```bash
-# Build immagine development (con tools aggiuntivi)
-docker build --target development -t vendemmia-contesa:dev .
-```
-
-## 4. Avvio dei Container
-
-### Modalità Produzione
-```bash
-# Avvia il container in background
-docker-compose -f docker-compose.yml up -d
-
-# Verifica che sia avviato correttamente
-docker ps | grep vendemmia-contesa
-```
-
-### Modalità Development (Opzionale)
-Per sviluppo con live reload:
-```bash
-# Avvia environment di sviluppo
-docker-compose -f docker-compose.dev.yml up -d
-
-# Accesso su http://localhost:8080
-```
-
-## 5. Configurazione Nginx Proxy Manager
-
-Nel tuo **Nginx Proxy Manager**, configura:
-
-### Proxy Host Settings
-- **Domain Names**: `rm.prolocoventicano.com`
-- **Scheme**: `http` (interno)
-- **Forward Hostname/IP**: `vendemmia-contesa`
-- **Forward Port**: `80`
-- **Websockets Support**: `❌ No` (non necessario)
-
-### Advanced Settings
-```nginx
-# Headers personalizzati se necessario
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Host $host;
-```
-
-### SSL Settings
-- **SSL Certificate**: `Request a new SSL Certificate`
-- **Force SSL**: `✅ Sì`
-- **HTTP/2 Support**: `✅ Sì`
-- **Email**: Il tuo email per Let's Encrypt
-
-## 6. Verifica Funzionamento
-
-### Test Container
-```bash
-# Verifica health del container
-docker exec vendemmia-contesa /usr/local/bin/healthcheck.sh
-
-# Controlla i log
-docker logs vendemmia-contesa
-
-# Test risposta diretta del container
-docker exec vendemmia-contesa curl -f http://localhost/
-```
-
-### Test API Backend
-```bash
-# Test endpoint classifica
-curl -X GET "http://localhost/src/php/get_classifica.php" \
-  -H "Content-Type: application/json"
-
-# Dovrebbe restituire JSON con success: true
-```
-
-### Test Dominio Esterno
-```bash
-# Test tramite NPM (sostituisci con il tuo dominio)
-curl -I https://rm.prolocoventicano.com
-
-# Dovrebbe restituire HTTP/2 200
-```
-
-## 7. Gestione Operativa
-
-### Visualizzare Log
-```bash
-# Log del container
-docker logs -f vendemmia-contesa
-
-# Log Nginx (se montati)
-tail -f ./logs/access.log
-tail -f ./logs/error.log
-```
-
-### Riavvio Container
-```bash
-# Riavvio gentile
-docker-compose restart
-
-# Riavvio completo
-docker-compose down
-docker-compose up -d
-```
-
-### Aggiornamento Live
-```bash
-# Modifica file in ./volume/
-nano volume/index.html
-
-# I cambiamenti sono immediatamente visibili!
-# Refresh del browser per vedere le modifiche
-```
-
-### Backup Dati
-```bash
-# Backup della classifica
-cp volume/data/classifica.csv backups/classifica-$(date +%Y%m%d-%H%M%S).csv
-
-# Backup completo volume
-tar -czf backups/volume-backup-$(date +%Y%m%d-%H%M%S).tar.gz volume/
-```
-
-## 8. Troubleshooting
-
-### Container Non Parte
-```bash
-# Verifica configurazione
-docker-compose config
-
-# Verifica rete
-docker network inspect plv_network
-
-# Build forzato
-docker-compose build --no-cache
-docker-compose up -d
-```
-
-### Problemi Permessi File
-```bash
-# Ripristina permessi
-chmod -R 755 volume/
-chown -R $USER:$USER volume/
-
-# Verifica all'interno del container
-docker exec vendemmia-contesa ls -la /usr/share/nginx/html/data/
-```
-
-### NPM Non Raggiunge Container
-```bash
-# Verifica che container sia sulla rete giusta
-docker inspect vendemmia-contesa | grep plv_network
-
-# Test connettività dalla rete
-docker run --rm --network=plv_network alpine wget -qO- http://vendemmia-contesa/
-```
-
-### Errori PHP
-```bash
-# Log errori PHP
-docker exec vendemmia-contesa tail -f /var/log/php_errors.log
-
-# Test PHP-FPM
-docker exec vendemmia-contesa pgrep -f php-fpm
-```
-
-## 9. Gestione Asset
-
-### Aggiunta Nuovi Asset
-```bash
-# Copia asset nella directory live
-cp nuovo-asset.jpg volume/assets/images/backgrounds/
-
-# Verifica permessi
-chmod 644 volume/assets/images/backgrounds/nuovo-asset.jpg
-
-# Asset immediatamente disponibile al gioco!
-```
-
-### Conversione SVG → PNG (Se Necessario)
-```bash
-# Se hai ImageMagick installato
-brew install imagemagick
-
-# Converti SVG in PNG
-cd volume/assets/images/grapes
-for file in *.svg; do
-    convert "$file" -resize 64x64 "${file%.svg}.png"
-done
-```
-
-## 10. Modalità Manutenzione
-
-### Attivare Manutenzione
-```bash
-# Modifica .env
-nano .env
-
-# Cambia
-MAINTENANCE_MODE=true
-MAINTENANCE_MESSAGE="Manutenzione in corso. Torna tra 10 minuti!"
-
-# Riavvia
-docker-compose restart
-```
-
-### Stato Container e Risorse
-```bash
-# Uso risorse
-docker stats vendemmia-contesa
-
-# Spazio disco
-du -sh volume/
-df -h
-```
-
-## 11. Deploy Completo - Checklist
-
-### Pre-Deploy
-- [ ] Rete `plv_network` esistente
-- [ ] File `.env` configurato correttamente  
-- [ ] Directory `volume/` popolata con asset
-- [ ] Build immagine Docker completato
-
-### Deploy
-- [ ] `docker-compose up -d` eseguito con successo
-- [ ] Container healthy (`docker ps` mostra UP)
-- [ ] NPM configurato per `rm.prolocoventicano.com`
-- [ ] Certificato SSL attivo
-
-### Post-Deploy
-- [ ] Sito raggiungibile da browser
-- [ ] API `/src/php/get_classifica.php` risponde
-- [ ] Test salvataggio punteggio funziona
-- [ ] Asset grafici caricano correttamente
-- [ ] Log non mostrano errori critici
-
-## 12. Comandi Rapidi di Riferimento
-
-```bash
-# === COMANDI ESSENZIALI ===
-
-# Setup iniziale completo
-cp env.example .env && nano .env
-mkdir -p volume/data logs backups
-cp -r assets data levels src index.html volume/
-chmod -R 755 volume
-
-# Build e avvio
-docker build --target production -t vendemmia-contesa:latest .
+# Avvio container
 docker-compose up -d
 
 # Verifica stato
 docker ps | grep vendemmia-contesa
 docker logs vendemmia-contesa
+```
 
-# Riavvio
-docker-compose restart
+### **4. Configurazione Nginx Proxy Manager**
 
-# Backup
-cp volume/data/classifica.csv backups/classifica-$(date +%Y%m%d).csv
+**Proxy Host Settings:**
+- **Domain**: `rm.prolocoventicano.com`
+- **Scheme**: `http`
+- **Forward Host**: `vendemmia-contesa`
+- **Forward Port**: `80`
+- **SSL**: Let's Encrypt + Force SSL
 
-# Stop completo
-docker-compose down
+---
+
+## 🎮 **Funzionalità Gioco**
+
+### **🎯 Gameplay Core**
+- **Obiettivo**: Eliminare tutti gli "Acini Macchiati" 
+- **Controlli**: Touch mobile ottimizzati
+- **Meccanica**: Bubble shooter con griglia esagonale
+- **Condizione Vittoria**: Tutti i macchiati eliminati
+- **Condizione Sconfitta**: Acini raggiungono linea rossa
+
+### **🍇 Varietà Uva (Autentiche DOC/DOCG)**
+- **AGLIANICO**: Rosso scuro - Taurasi DOCG, Aglianico del Taburno
+- **FIANO**: Giallo dorato - Fiano di Avellino DOCG  
+- **GRECO**: Verde chiaro - Greco di Tufo DOCG
+- **MACCHIATI**: Acini corrotti da eliminare
+
+### **🏆 Sistema Progressione**
+- **10 Livelli** con difficoltà crescente
+- **Narrativa Italiana** per ogni livello
+- **Meccaniche Speciali**:
+  - Livello 5: Effetti luna piena
+  - Livello 6: Terremoti vesuviani
+  - Livello 7: Radici sotterranee
+  - Livello 8: Camuffamento tramonto
+  - Livello 9: Ombre uccelli mobili
+  - Livello 10: Boss fight finale
+
+### **📱 Mobile Optimization**
+- **Portrait Mode** ottimizzato
+- **Touch Controls** con una mano
+- **Safe Area Support** per iPhone notch
+- **Performance Mobile** con hardware acceleration
+- **Responsive Design** 360px → tablet
+
+---
+
+## 🔧 **Sviluppo e Debug**
+
+### **Modalità Development**
+```bash
+# Build development
+docker build --target development -t vendemmia-contesa:dev .
+
+# Avvio con live reload
+docker-compose -f docker-compose.dev.yml up -d
+
+# Accesso: http://localhost:8080
+```
+
+### **Debug Options**
+Nel codice `constants.js`:
+```javascript
+const DEBUG_CONFIG = {
+    ENABLED: true,          // Abilita debug
+    SHOW_GRID: true,       // Mostra griglia
+    SHOW_FPS: true,        // Mostra FPS
+    LOG_LEVEL: 'DEBUG'     // Livello log
+};
+```
+
+### **Live Editing**
+```bash
+# Modifica asset live
+cp nuovo-asset.png volume/assets/images/grapes/
+# Ricarica browser - cambiamenti immediatamente visibili!
+
+# Modifica livelli
+nano volume/levels/level_1.json
+# Restart livello per vedere modifiche
 ```
 
 ---
 
-**🎯 Con questi comandi hai il controllo completo del progetto senza dipendenze da Makefile!**
+## 🎵 **Asset e Multimedia**
 
-La configurazione è progettata per integrarsi perfettamente con il tuo Nginx Proxy Manager esistente.
+### **🎨 Asset Grafici (26 Files)**
+- **Backgrounds**: 1 menu + 10 livelli specifici
+- **Grapes**: 6 texture SVG (3 normali + 3 macchiati)
+- **UI**: 4 bottoni SVG + 3 loghi/icone
+- **Effects**: JSON animazioni particelle
+
+### **🎵 Asset Audio (12 Files)**
+- **BGM**: Menu, Game, Level Complete, Game Over
+- **SFX**: Launch, Match, Explosion, Bounce, ecc.
+
+### **Formato Asset**
+- **Grafici**: SVG (scalabili), JPG (backgrounds), PNG (icons)
+- **Audio**: WAV (compatibilità massima), 44.1kHz
+- **Configurazioni**: JSON (livelli), CSS/JS (codice)
+
+---
+
+## 🛡️ **Sicurezza e Performance**
+
+### **Sicurezza**
+- **CORS Protection** con domini allowlist
+- **Rate Limiting** su API classifica
+- **Input Sanitization** su save score
+- **No sensitive data** in frontend
+
+### **Performance**
+- **Asset Optimization** con lazy loading
+- **Mobile Hardware Acceleration** 
+- **Memory Management** con object pooling
+- **Progressive Loading** degli asset
+
+### **Backup**
+```bash
+# Backup classifica
+cp volume/data/classifica.csv backups/classifica-$(date +%Y%m%d).csv
+
+# Backup completo
+tar -czf backups/full-backup-$(date +%Y%m%d).tar.gz volume/
+```
+
+---
+
+## 🎯 **Testing e Verifica**
+
+### **Test Funzionalità**
+```bash
+# Test health container
+docker exec vendemmia-contesa /usr/local/bin/healthcheck.sh
+
+# Test API classifica
+curl -X GET "http://localhost/src/php/get_classifica.php"
+
+# Test dominio esterno
+curl -I https://rm.prolocoventicano.com
+```
+
+### **Test Mobile**
+- **Chrome DevTools**: Device simulation
+- **Safari iOS**: Remote debugging
+- **Touch Events**: Gesture testing
+- **Performance**: FPS monitoring
+
+---
+
+## 📚 **Documentazione Tecnica**
+
+### **Architecture Pattern**
+- **Component-Based**: Grape, GridManager, Shooter, UIManager
+- **Scene Management**: Menu → Game → GameOver
+- **Event-Driven**: Touch input → Physics → Audio feedback
+- **Mobile-First**: Touch controls, responsive UI
+
+### **Key Technologies**
+- **Phaser.js 3**: Game engine
+- **HTML5 Canvas**: Rendering
+- **CSS Grid/Flexbox**: Responsive layout
+- **PHP**: Backend classifica
+- **Docker**: Containerization
+- **Nginx**: Web server
+
+### **Code Standards**
+- **ES6+** JavaScript con moduli
+- **JSDoc** documentation completa
+- **Mobile-first** CSS con media queries
+- **Semantic HTML5** structure
+- **RESTful** API design
+
+---
+
+## 🇮🇹 **Autenticità Culturale Italiana**
+
+### **Regioni Rappresentate**
+1. **Campania** - Taurasi DOCG
+2. **Irpinia** - Greco di Tufo DOCG  
+3. **Montefusco** - Fiano di Avellino DOCG
+4. **Vesuvio** - Lacryma Christi DOC
+5. **Benevento** - Falanghina del Sannio DOC
+6. **Cilento** - Aglianico del Cilento DOC
+7. **Amalfi** - Costa d'Amalfi DOC
+8. **Monti Lattari** - Penisola Sorrentina DOC
+
+### **Elementi Tradizionali**
+- **Proverbi Contadini**: "Vento del nord, vino d'oro"
+- **Tradizioni**: Vendemmia notturna, raccolta sui terrazzamenti
+- **Folklore**: Leggende delle radici profonde
+- **Dialetti**: Espressioni regionali autentiche
+
+---
+
+## 🏆 **Deploy Checklist**
+
+### **Pre-Deploy**
+- [ ] ✅ Codice completo (24 files)
+- [ ] ✅ Asset mappati correttamente
+- [ ] ✅ Docker build successful
+- [ ] ✅ Environment configurato
+- [ ] ✅ Rete Docker PLV verificata
+
+### **Deploy**
+- [ ] Container running (docker ps)
+- [ ] Health check passing
+- [ ] NPM proxy configurato
+- [ ] SSL certificato attivo
+- [ ] Backup strategy implementata
+
+### **Post-Deploy**
+- [ ] Sito raggiungibile pubblicamente
+- [ ] API classifica funzionante
+- [ ] Audio/video caricano correttamente
+- [ ] Mobile testing completato
+- [ ] Performance monitoring attivo
+
+---
+
+## 📞 **Supporto**
+
+### **Log e Debugging**
+```bash
+# Log container
+docker logs -f vendemmia-contesa
+
+# Log web server
+tail -f logs/access.log
+tail -f logs/error.log
+
+# Test PHP
+docker exec vendemmia-contesa php -v
+```
+
+### **Comandi Rapidi**
+```bash
+# Riavvio veloce
+docker-compose restart
+
+# Reset completo
+docker-compose down && docker-compose up -d
+
+# Backup express
+cp volume/data/classifica.csv backups/backup-$(date +%H%M%S).csv
+```
+
+---
+
+**🎉 La Vendemmia Contesa è pronta per celebrare il Natale 2025!**  
+**🍇 Per aspera ad astra - Attraverso le difficoltà alle stelle! 🌟**
+
+*Sviluppato con ❤️ per la comunità italiana e la tradizione vinicola*
